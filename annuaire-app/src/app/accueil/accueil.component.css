@@ -1,0 +1,11 @@
+.application p
+{
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.application a
+{
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}

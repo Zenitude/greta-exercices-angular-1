@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="application">
+
+    <header>
+      <a href="">
+        <img [src]="chevron" alt="retour arrière">
+      </a>
+      <h1>Annuaire</h1>
+      <a href="">
+        <span>.</span>
+        <span>.</span>
+        <span>.</span>
+      </a>
+    </header>
+    
+    <div class="contenu">
+      
+      <div *ngFor="let user of usersInfo">
+        <a href="users/{{user.login.uuid}}">
+          <img [src]="user.picture.thumbnail">
+          
+          <p class="infosUser">
+            <span>{{user.name.first}} {{user.name.last}}</span>
+            <span>{{user.email}}</span>
+          </p>
+          
+          <img *ngIf="user.dob.age <= 40" [src]="moins40" [alt]="user.name.first">
+          <img *ngIf="user.dob.age > 40 && user.dob.age <= 60" [src]="entre40et60" [alt]="user.name.first">
+          <img *ngIf="user.dob.age > 60" [src]="plus60" [alt]="user.name.first">
+          
+        </a>
+      </div>
+      
+    </div>
+    
+  </div>
+</div>

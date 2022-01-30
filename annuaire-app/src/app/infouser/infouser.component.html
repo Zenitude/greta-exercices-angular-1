@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="application">
+  
+      <header>
+        <a href="users">
+          <img [src]="chevron" alt="retour arrière">
+        </a>
+        <h1>Annuaire</h1>
+        <a href="">
+          <span>.</span>
+          <span>.</span>
+          <span>.</span>
+        </a>
+      </header>
+      
+      <div class="contenu">
+        
+        <img class="photoUser" [src]="users.picture.large" [alt]="users.name.first">
+
+        <section class="sectionInformations">
+          <h3>Informations</h3>
+          <p><span>First Name :</span> {{ users.name.first}}</p>
+          <p><span>Last Name :</span> {{users.name.last}}</p>
+          <p><span>Birth Date :</span> {{users.dob.date | date: 'dd/MM/YYYY'}} ({{users.dob.age}} ans)</p>
+          <p><span>Nationality :</span> {{ users.nat}} </p>
+        </section>
+
+        <section class="sectionAdresse">
+          <h3>Adresse</h3>
+          <address>
+            {{ users.location.street.number}} {{ users.location.street.name}}<br>
+            {{ users.location.postcode}} {{users.location.city}}<br>
+            {{ users.location.state}} {{users.location.country}}
+          </address>
+        </section>
+
+        <section class="sectionContact">
+          <h3>Contact</h3>
+          <p><span>Email :</span> {{users.email}} </p>
+          <p><span>Phone :</span> {{users.phone}} </p>
+          <p><span>Cell :</span> {{users.cell}}</p>
+        </section>
+
+        <section class="sectionCompte">
+          <h3>Compte</h3>
+          <p><span>Nom d'utilisateur :</span> {{users.login.username}}</p>
+          <p><span>Enregistré le :</span> {{users.registered.date | date: 'dd/MM/YYYY'}} ({{users.registered.age}} ans)</p>
+        </section>
+
+      
+        
+      </div>
+      
+    </div>
+  </div>
